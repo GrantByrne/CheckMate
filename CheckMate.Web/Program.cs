@@ -61,8 +61,9 @@ else
 
 app.UseHttpsRedirection();
 
-
 app.UseAntiforgery();
+
+app.MapDefaultEndpoints();
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
