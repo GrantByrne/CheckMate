@@ -1,0 +1,15 @@
+@namespace CheckMate.Web.Client.Pages.ToDo.Components
+
+<MudList T="string">
+    @foreach(var item in Items)
+    {
+        <MudListItem>
+            <MudCheckBox Color="Color.Primary" T="bool">@item</MudCheckBox>
+        </MudListItem>
+        <MudDivider />
+    }
+</MudList>
+
+@code {
+    [Parameter] public List<string> Items { get; set; } = new();
+}

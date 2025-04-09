@@ -1,0 +1,22 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 150px);
+    position: relative;
+}
+
+.todo-list {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 80px; /* Space for the fixed input */
+}
+
+.input-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background-color: var(--mud-palette-background, #1e1e1e);
+    z-index: 100; /* Increased from 5 to 100 */
+}

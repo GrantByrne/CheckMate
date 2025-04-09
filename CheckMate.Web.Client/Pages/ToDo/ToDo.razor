@@ -1,0 +1,42 @@
+@page "/todo"
+@using CheckMate.Web.Client.Pages.ToDo.Layouts
+@using CheckMate.Web.Client.Pages.ToDo.Components
+@layout AppLayout
+
+@* <MudStack StretchItems="StretchItems.Start"> *@
+@*     <MudPaper Class="todo-list overflow-auto" Style="height: calc(100% - 80px);"> *@
+@*         <TodoList Items="_items" /> *@
+@*     </MudPaper> *@
+@* </MudStack> *@
+@* *@
+@* <TodoInput OnTodoAdded="AddNewTodo" /> *@
+
+<MudGrid Spacing="2">
+    <MudItem xs="12">
+        <MudPaper Elevation="0" Height="90vh" style="overflow-y: auto;">
+            <TodoList Items="_items" />
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12">
+        <MudPaper Elevation="12">
+            <TodoInput OnTodoAdded="AddNewTodo" />
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+@code {
+    
+    private string? _textValue;
+    
+    private readonly List<string> _items =
+    [
+        "Item 1",
+        "Item 2",
+        "Item 3"
+    ];
+
+    private void AddNewTodo(string todo)
+    {
+        _items.Add(todo);
+    }
+}
